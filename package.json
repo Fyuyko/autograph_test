@@ -1,0 +1,40 @@
+{
+  "name": "test_autograph",
+  "version": "1.0.0",
+  "description": "Сборка gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anastasia_Epova",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-fonter": "latest",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-imagemin": "7.1.0",
+    "gulp-newer": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "^5.1.0",
+    "gulp-svg-sprite": "latest",
+    "gulp-ttf2woff": "latest",
+    "gulp-ttf2woff2": "latest",
+    "gulp-uglify-es": "latest",
+    "gulp-webp-html": "latest",
+    "gulp-webpcss": "latest",
+    "imagemin-webp": "latest",
+    "sass": "latest",
+    "transform-runtime": "0.0.0",
+    "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.4",
+    "node-fetch": "^2.6.1"
+  }
+}
