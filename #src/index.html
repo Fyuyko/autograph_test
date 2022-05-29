@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- <link rel="stylesheet" href="./scss/style.scss"> -->
+   <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+   <header class="header">
+      <div class="container">
+         <div class="header__inner">
+            <div class="logo">
+               <img class="logo__img" src="./img/logo.svg">
+               <div class="logo__name">Avtograph</div>
+            </div>
+
+            <div class="user popup">
+               <img class="user__email" src="./img/mail.svg">
+               <img class="logo__popup-open-button" src="./img/user.svg">
+
+               <div class="user__popap-wrapper">
+                  <div class="user__popap">
+                     <img src="./img/user__profile.svg" alt="">
+                     <div class="user__name">User</div>
+                     <img class="user__close-button" src="./img/remove.svg" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <main class="main">
+      <div class="container">
+         <div class="main__inner">
+            <div class="main__header">
+               <div class="main__logo">Avtograph TODO list</div>
+               <div class="sorting">
+                  <div class="sorting__header">
+                     <span class="sorting__active-filter">Все</span>
+                     <img class="sorting__open-button" src="./img/arrow.svg">
+                  </div>
+                  <div class="sorting__list"></div>
+               </div>
+            </div>
+
+            <form class="add-todo">
+               <input type="input" class="add-todo__import" placeholder="Поле ввода" />
+               <button class="add-todo__button"><img src="./img/plus.svg" alt=""></button>
+            </form>
+
+            <ul class="todo"></ul>
+         </div>
+      </div>
+   </main>
+
+   <script src="./js/script.js"></script>
+</body>
+
+</html>

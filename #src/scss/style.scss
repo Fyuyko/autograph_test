@@ -1,0 +1,273 @@
+@font-face {
+   font-family: "Spartan";
+   src: url("../fonts/Spartan-Light.ttf");
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Spartan";
+   src: url("../fonts/Spartan-Medium.ttf");
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Spartan";
+   src: url("../fonts/Spartan-Bold.ttf");
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "NotoSans";
+   src: url("../fonts/NotoSans-Regular.ttf");
+   font-weight: 400;
+   font-style: normal;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Spartan;
+   color: #171e29;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   .container {
+      width: 86.25%;
+      margin: 0 auto;
+      position: relative;
+   }
+}
+
+/*--------- header -----------*/
+.header {
+   flex: 0 0 auto;
+   .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 0;
+
+      .logo {
+         font-size: 13px;
+         font-weight: 700;
+         text-transform: uppercase;
+         display: flex;
+         gap: 5px;
+         .logo__name {
+            position: relative;
+            top: 2px;
+         }
+      }
+      /*------ user и popup ----------*/
+      .user {
+         display: flex;
+
+         .user__email {
+            padding-right: 15px;
+         }
+
+         .user__popap-wrapper.active {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 0.5s ease-in;
+         }
+
+         .user__popap {
+            background-color: #fff;
+            position: absolute;
+            display: none;
+            top: 80px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 207px;
+            height: 66px;
+            justify-content: center;
+            align-items: center;
+            gap: 13px;
+            z-index: 2;
+
+            .user__close-button {
+               position: absolute;
+               top: 12px;
+               right: 12px;
+            }
+
+            &.active {
+               display: flex;
+            }
+         }
+      }
+   }
+}
+/*--------main----------*/
+.main {
+   flex: 1 1 auto;
+   background-color: #f2f2f2;
+   .main__inner {
+      padding-top: 35px;
+   }
+   .main__header {
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      /*-----sorting-----*/
+      .sorting {
+         position: absolute;
+         right: -15px;
+         top: 14px;
+         padding: 20px 15px;
+         display: flex;
+         flex-direction: column;
+         font-weight: 700;
+         cursor: pointer;
+         .sorting__header {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 10px;
+         }
+         .sorting__list {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            width: 95px;
+            &.show-menu {
+               background-color: #fff;
+               padding: 20px 15px;
+               display: flex;
+            }
+            .sorting__item {
+               display: flex;
+               justify-content: space-between;
+               gap: 5px;
+               font-size: 11px;
+               font-weight: 400;
+               img {
+                  z-index: 3;
+               }
+               &.active {
+                  font-weight: 700;
+               }
+            }
+         }
+
+         .sorting__open-button {
+            transition: all 0.3s ease-in;
+            &.active {
+               transform: rotateX(180deg);
+            }
+         }
+      }
+   }
+
+   /*--------- добавление todo ----------*/
+   .add-todo {
+      background-color: #fff;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      .add-todo__import {
+         outline: none;
+         border: none;
+         padding: 0 0 0 16px;
+         width: calc(100% - 51px);
+         &::placeholder {
+            color: #bac2cd;
+            font-family: Spartan;
+         }
+      }
+      .add-todo__button {
+         border: none;
+         outline: none;
+         background-color: #55b8ff;
+         color: #fff;
+         width: 32px;
+         height: 32px;
+         img {
+            position: relative;
+            top: 1px;
+            left: 1px;
+         }
+      }
+   }
+   /*--------сами todo ---------*/
+   .todo {
+      font-family: NotoSans;
+      font-size: 12px;
+      list-style: none;
+      padding: 0;
+      .todo__item {
+         background-color: #fff;
+         justify-content: space-between;
+         margin-bottom: 5px;
+         padding: 10px;
+         display: none;
+         &.show {
+            display: flex;
+         }
+         &.checked {
+            text-decoration: line-through;
+         }
+         .checkbox {
+            margin-right: 10px;
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+         }
+         .checkbox + label {
+            position: relative;
+            vertical-align: middle;
+            padding: 0 0 0 30px;
+            cursor: pointer;
+         }
+         .checkbox + label:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 9px;
+            height: 9px;
+            border: 2px solid #bfc6d0;
+         }
+         .checkbox + label:after {
+            content: "";
+            position: absolute;
+         }
+
+         .checkbox:checked + label:after {
+            position: absolute;
+            top: 7px;
+            left: 4px;
+            border-radius: 2px;
+            background: #55b8ff;
+            height: 5px;
+            width: 5px;
+         }
+
+         .todo__item-remov {
+            border: none;
+            outline: none;
+            background-color: #fff;
+         }
+      }
+   }
+}
+
+@media (min-width: 1024px) {
+   .container {
+      max-width: 768px;
+   }
+}

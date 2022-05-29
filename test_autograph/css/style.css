@@ -48,6 +48,7 @@ body {
 body .container {
   width: 86.25%;
   margin: 0 auto;
+  position: relative;
 }
 
 /*--------- header -----------*/
@@ -173,8 +174,8 @@ body .container {
 
 .main .main__header .sorting {
   position: absolute;
-  right: 11px;
-  top: 64px;
+  right: -15px;
+  top: 14px;
   padding: 20px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
